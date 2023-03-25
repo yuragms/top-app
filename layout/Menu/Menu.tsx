@@ -8,6 +8,7 @@ import ServicesIcon from './icons/services.svg';
 import BooksIcon from './icons/books.svg';
 import ProductsIcon from './icons/products.svg';
 import { TopLevelCategory } from '../../interfaces/toppage.interface';
+import Link from 'next/link';
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
   {
@@ -47,7 +48,7 @@ export const Menu = (): JSX.Element => {
       <>
         {firstLevelMenu.map((m) => (
           <div key={m.route}>
-            <a href={`/${m.route}`}>
+            <Link href={`/${m.route}`}>
               <div
                 className={cn(styles.firstLevel, {
                   [styles.firstLevelActive]: m.id == firstCategory,
@@ -56,7 +57,7 @@ export const Menu = (): JSX.Element => {
                 {m.icon}
                 <span>{m.name}</span>
               </div>
-            </a>
+            </Link>
             {m.id == firstCategory && buildSecondLevel(m)}{' '}
           </div>
         ))}
@@ -85,7 +86,7 @@ export const Menu = (): JSX.Element => {
 
   const buildThirdLevel = (pages: PageItem[], route: string) => {
     return pages.map((p) => (
-      <a
+      <Link
         key={p.alias}
         href={`/${route}/${p.alias}`}
         className={cn(styles.thirdLevel, {
@@ -93,7 +94,7 @@ export const Menu = (): JSX.Element => {
         })}
       >
         {p.category}
-      </a>
+      </Link>
     ));
   };
 
