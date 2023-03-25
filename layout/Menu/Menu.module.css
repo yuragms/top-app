@@ -43,3 +43,39 @@
 
   font-weight: 300;
 }
+.secondBlock {
+  margin-top: 15px;
+  margin-left: 12px;
+  padding: 0 0 0 32px;
+
+  list-style: none;
+
+  border-left: 1px solid #dfdfdf;
+}
+
+.secondLevelBlock {
+  overflow: hidden;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.thirdLevel {
+  display: block;
+
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  color: var(--gray-dark);
+  outline-offset: -1px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.thirdLevelActive,
+.thirdLevel:hover {
+  color: var(--primary);
+}

@@ -58,7 +58,6 @@ export const Menu = (): JSX.Element => {
               </div>
             </a>
             {m.id == firstCategory && buildSecondLevel(m)}{' '}
-            {console.log(m.id, firstCategory)}
           </div>
         ))}
       </>
@@ -66,20 +65,22 @@ export const Menu = (): JSX.Element => {
   };
 
   const buildSecondLevel = (menuItem: FirstLevelMenuItem) => {
-    <div>
-      {menu.map((m) => (
-        <div key={m._id.secondCategory}>
-          <div className={styles.secondLevel}>{m._id.secondCategory}</div>
-          <div
-            className={cn(styles.secondLevelBlock, {
-              [styles.secondLevelBlockOpend]: m.isOpened,
-            })}
-          >
-            {buildThirdLevel(m.pages, menuItem.route)}
+    return (
+      <div className={styles.secondBlock}>
+        {menu.map((m) => (
+          <div key={m._id.secondCategory}>
+            <div className={styles.secondLevel}>{m._id.secondCategory}</div>
+            <div
+              className={cn(styles.secondLevelBlock, {
+                [styles.secondLevelBlockOpend]: m.isOpened,
+              })}
+            >
+              {buildThirdLevel(m.pages, menuItem.route)}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>;
+        ))}
+      </div>
+    );
   };
 
   const buildThirdLevel = (pages: PageItem[], route: string) => {
