@@ -1,6 +1,7 @@
 import { Card, HhData, Htag, Tag } from '../../components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
+import { TopLevelCategory } from '../../interfaces/toppage.interface';
 
 export const TopPageComponent = ({
   page,
@@ -29,7 +30,7 @@ export const TopPageComponent = ({
           </Tag>
         )}
       </div>
-      <HhData {...page.hh} />
+      {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh} />}
     </div>
   );
 };
