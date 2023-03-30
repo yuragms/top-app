@@ -115,3 +115,9 @@
   border-bottom: 1px dashed var(--gray-light);
   margin-bottom: 5px;
 }
+
+@media screen and (max-width: 1320px) {
+  .product {
+    grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
+  }
+}
