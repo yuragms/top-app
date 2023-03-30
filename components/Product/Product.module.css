@@ -97,3 +97,7 @@
   border-left: 2px solid var(--red);
   padding-left: 15px;
 }
+.characteristics {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
