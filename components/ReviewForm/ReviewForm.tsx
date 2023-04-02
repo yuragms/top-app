@@ -28,8 +28,7 @@ export const ReviewForm = ({
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(styles.reviewForm, className)} {...props}>
         <Input
-          {...(register('name'),
-          {
+          {...register('name', {
             required: { value: true, message: 'Заполните имя' },
           })}
           placeholder="Имя"
@@ -60,9 +59,12 @@ export const ReviewForm = ({
           />
         </div>
         <Textarea
-          {...register('description')}
-          placeholder="Заголовок отзыва"
+          {...register('description', {
+            required: { value: true, message: 'Заполните описание' },
+          })}
+          placeholder="Текст отзыва"
           className={styles.description}
+          error={errors.description}
         />
         <div className={styles.submit}>
           <Button appearance="primary">Отправить </Button>

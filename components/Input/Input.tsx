@@ -9,9 +9,9 @@ export const Input = forwardRef(
     ref: ForwardedRef<HTMLInputElement>
   ): JSX.Element => {
     return (
-      <div className={styles.inputWrapper}>
+      <div className={cn(className, styles.inputWrapper)}>
         <input
-          className={cn(className, styles.input, { [styles.error]: error })}
+          className={cn(styles.input, { [styles.error]: error })}
           ref={ref}
           {...props}
         />
