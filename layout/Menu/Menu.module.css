@@ -54,20 +54,20 @@
 }
 
 .secondLevelBlock {
-  display: none;
-  /* overflow: hidden;
+  /* display: none; */
+  overflow: hidden;
 
-  padding: 0;
+  /* padding: 0;
 
   list-style: none; */
 }
-.secondLevelBlockOpend {
+/* .secondLevelBlockOpend {
   display: block;
 }
 
 .secondLevelBlockOpend:last-child {
   margin-bottom: 20px;
-}
+} */
 
 .thirdLevel {
   display: block;
