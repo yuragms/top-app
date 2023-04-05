@@ -15,6 +15,9 @@
   grid-template-columns: auto auto;
   gap: 40px;
 }
+.sortName {
+  display: none;
+}
 .sort button {
   display: grid;
   grid-template-columns: 20px 1fr;
