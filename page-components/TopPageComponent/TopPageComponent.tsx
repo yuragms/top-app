@@ -1,19 +1,11 @@
-import {
-  Advantages,
-  Card,
-  HhData,
-  Htag,
-  P,
-  Product,
-  Sort,
-  Tag,
-} from '../../components';
+import { Advantages, HhData, Htag, Product, Sort, Tag } from '../../components';
 import { TopPageComponentProps } from './TopPageComponent.props';
 import styles from './TopPageComponent.module.css';
 import { TopLevelCategory } from '../../interfaces/toppage.interface';
 import { SortEnum } from '../../components/Sort/Sort.props';
 import { useEffect, useReducer } from 'react';
 import { sortReducer } from './sort.reducer';
+import { useReducedMotion } from 'framer-motion';
 // import { useScrollY } from '../../hooks/useScrollY';
 
 export const TopPageComponent = ({
@@ -29,6 +21,7 @@ export const TopPageComponent = ({
     }
   );
   // const y = useScrollY();
+  const shouldReducerMotion = useReducedMotion();
 
   const setSort = (sort: SortEnum) => {
     dispathSort({ type: sort });
@@ -51,7 +44,12 @@ export const TopPageComponent = ({
       <div role="list">
         {sortedProducts &&
           sortedProducts.map((p) => (
-            <Product role="listitem" layout key={p._id} product={p} />
+            <Product
+              role="listitem"
+              layout={shouldReducerMotion ? false : true}
+              key={p._id}
+              product={p}
+            />
           ))}
       </div>
       <div className={styles.hhTitle}>
