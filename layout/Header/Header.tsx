@@ -11,7 +11,7 @@ import { useRouter } from 'next/router';
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const router = useRouter();
-   const shouldReducerMotion = useReducedMotion();
+  const shouldReducerMotion = useReducedMotion();
 
   useEffect(() => {
     setIsOpened(false);
@@ -26,7 +26,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
       },
     },
     closed: {
-      opacity:  const shouldReducerMotion ? 1 : 0,
+      opacity: shouldReducerMotion ? 1 : 0,
       x: '100%',
     },
   };
